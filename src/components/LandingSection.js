@@ -6,6 +6,7 @@ import TypistText from './TypistText'
 const Styles = styled.div`
    height: 90vh;
    position: relative;
+   margin: 16vh 0;
 
    .avatar-pic {
       border-radius: 15%;
@@ -29,7 +30,7 @@ function LandingSection() {
          <TsParticles />
          <div className="landing-section-container">
             <img src="https://avatars.githubusercontent.com/u/5865915?s=400&u=5fc166e95a00b64d9e232cfeeb0deb529aa6c3f4&v=4" className="avatar-pic" alt='avatar' />
-            <h1>hi, I'm Trevor Armes</h1>
+            <h1>hi, I'm Trevor Armes.</h1>
             <TypistText />
          </div>
       </Styles>

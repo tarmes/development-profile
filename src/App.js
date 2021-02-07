@@ -15,6 +15,7 @@ function App() {
                <Route path='/' component={About} />
             </Switch>
          </div>
+         <About />
 		</div>
 	);
 }
