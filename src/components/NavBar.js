@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 const Styles = styled.div`
    position: relative;
+   background-color: white;
+   height: 10vh;
 `
 
 function NavBar() {

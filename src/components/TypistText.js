@@ -21,9 +21,7 @@ function TypistText() {
                <span>I am a Reac</span>
                   <Typist.Backspace count={4} delay={500} />
                <span>Front-En</span>
-                  <Typist.Backspace count={8} delay={800} />
-               <span>Front and Bac</span>
-                  <Typist.Backspace count={12} delay={1000}  />
+                  <Typist.Backspace count={7} delay={800} />
                <span>ull Stack Developer.</span>
          </Typist>
       </Styles>

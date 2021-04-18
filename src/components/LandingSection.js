@@ -6,12 +6,12 @@ import TypistText from './TypistText'
 const Styles = styled.div`
    height: 90vh;
    position: relative;
-   margin: 16vh 0;
+   margin: 10vh 0;
 
    .avatar-pic {
       border-radius: 15%;
       /* z-index: 2; */
-      width: 15%;
+      width: 20%;
       position: relative;
       margin: 0 auto;
    }
@@ -19,7 +19,7 @@ const Styles = styled.div`
    h1 {
       position: relative;
       color: white;
-      margin: 25px 0;
+      margin: 40px 0;
    }
 
 `;

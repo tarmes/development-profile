@@ -2,11 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Styles = styled.div`
-   position: absolute;
-
-   h1 {
-      position: absolute;
-   }
+   position: relative;
+   background-color: white;
+   height: 90vh;
 `
 
 function About() {
