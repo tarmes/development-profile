@@ -6,7 +6,7 @@ import TypistText from './TypistText'
 const Styles = styled.div`
    height: 90vh;
    position: relative;
-   margin: 10vh 0;
+   margin: 23vh 0 0;
 
    .avatar-pic {
       border-radius: 15%;
@@ -21,6 +21,7 @@ const Styles = styled.div`
       color: white;
       margin: 40px 0;
    }
+
 
 `;
 

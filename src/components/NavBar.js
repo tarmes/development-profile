@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Styles = styled.div`
-   position: relative;
-   background-color: white;
-   height: 10vh;
+   position: fixed;
+   z-index: 500;
+   overflow: hidden;
+   top: 0;
+   width: 100%;
+
+
 `
 
 function NavBar() {
@@ -19,7 +23,7 @@ function NavBar() {
    return (
       <Styles>
          <div className='navbar-container'>
-            <nav className="navbar navbar-expand navbar-dark bg-dark">
+            <nav className="navbar navbar-expand navbar-dark bg-transparent">
                <a href="/" className="navbar-brand">
                   Armes Development
                </a>
