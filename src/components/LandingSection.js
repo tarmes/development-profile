@@ -7,7 +7,7 @@ import * as VFX from "react-vfx";
 const Styles = styled.div`
   height: 90vh;
   position: relative;
-  margin: 20vh 0 0;
+  margin: 20vh 0 -5vh;
 
   .avatar-pic {
     border-radius: 15%;

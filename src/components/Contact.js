@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import * as emailjs from 'emailjs-com';
+import { FaBeer } from 'react-icons/fa'
 
 const Styles = styled.div`
    position: relative;
-   height: 90vh;
-   margin: 20vh 0 0;
+   margin: 10vh 0;
    background-color: #e3c2ea;
    border-radius: 10px;
    display: flex;
+   padding: 5%;
 
    .contact-container {
       width: 40%;
@@ -39,16 +40,8 @@ function Contact() {
    }
 
    const handleSubmit = e => {
-      e.preventDefault()
-      // const completedForm = {
-      //    name: contactFormValues.name.trim(),
-      //    company: contactFormValues.company.trim(),
-      //    email: contactFormValues.email.trim(),
-      //    subject: contactFormValues.subject.trim(),
-      //    text: contactFormValues.text.trim()
-      // }
-      const { name, company, email, subject, text } = contactFormValues;
-      
+      e.preventDefault();
+      const { name, company, email, subject, text } = contactFormValues;      
       let templateParams = {
          name: name,
          company: company,
@@ -56,16 +49,17 @@ function Contact() {
          to_name: "traarmes@gmail.com",
          subject: subject,
          message_html: text
-      }
+      };
 
       emailjs.send(
          'service_e2ik6ln',
          'template_dj13r8g',
          templateParams,
          'user_fB8QHaAnd4ECazpA9ukJP'
-      )
+      );
 
-      console.log("attempted send", templateParams)
+      console.log("attempted send", templateParams);
+      setContactFormValues(initialContactFormValues);
    }
 
 
@@ -148,7 +142,7 @@ function Contact() {
             <h2>General Info</h2>
             <p>If you'd like to see some more of the developer, or more of the person, here you go!</p>
             <div className="contact-buttons">
-               <ul>
+               {/* <ul>
                   <li>
                      <a href="https://www.linkedin.com/in/trevor-armes/" target="_blank" rel="noopener noreferrer">
                         <span class="ico-circle">
@@ -156,7 +150,9 @@ function Contact() {
                         </span>
                      </a>
                   </li>
-               </ul>
+               </ul> */}
+               <a href='#' class='fa fa-twitter'></a>
+               <p>Lorem ipsum <FaBeer /></p>
             </div>
          </div>
       </Styles>
