@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import * as emailjs from 'emailjs-com';
-import { FaBeer } from 'react-icons/fa'
+import { SocialIcon } from 'react-social-icons';
 
 const Styles = styled.div`
    position: relative;
@@ -19,6 +19,14 @@ const Styles = styled.div`
    .contact-info-container {
       width: 40%;
       margin: auto;
+   }
+
+   .contact-buttons {
+      display: flex;
+   }
+
+   .socials {
+      margin: 0 2%;
    }
 `;
 
@@ -142,17 +150,8 @@ function Contact() {
             <h2>General Info</h2>
             <p>If you'd like to see some more of the developer, or more of the person, here you go!</p>
             <div className="contact-buttons">
-               {/* <ul>
-                  <li>
-                     <a href="https://www.linkedin.com/in/trevor-armes/" target="_blank" rel="noopener noreferrer">
-                        <span class="ico-circle">
-                           <i class="ion-social-linkedin">hello</i>
-                        </span>
-                     </a>
-                  </li>
-               </ul> */}
-               <a href='#' class='fa fa-twitter'></a>
-               <p>Lorem ipsum <FaBeer /></p>
+                     <SocialIcon className='socials' url="https://www.linkedin.com/in/trevor-armes/" />
+                     <SocialIcon className='socials' url="https://github.com/tarmes" />
             </div>
          </div>
       </Styles>
