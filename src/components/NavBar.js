@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Styles = styled.div`
@@ -27,7 +27,7 @@ const Styles = styled.div`
 
    .pre-transition {
       width: 100%;
-      transition: all 2s;
+      transition: all 2s ease-out;
    }
 
    .post-transition {
@@ -35,7 +35,7 @@ const Styles = styled.div`
       margin: 0 auto;
       background-color: darkred;
       color: black;
-      transition: all .75s;
+      transition: all 1s ease;
    }
 
 
@@ -70,24 +70,27 @@ function NavBar() {
                </a>
                <div className={isScrolling ? "navbar-nav mx-auto" : "navbar-nav ml-auto"}>
                   <li className="nav-item">
-                     <Link to={"/"} className="nav-link">
+                     {/* <Link to={"/"} className="nav-link js-scroll">
                         Home
-                     </Link>
+                     </Link> */}
+                     <a class="nav-link js-scroll" href="#top">Home</a>
                   </li>
                   <li className="nav-item">
-                     <Link to={"/about"} className="nav-link">
+                     {/* <Link to={"/about"} className="nav-link js-scroll">
                         About
-                     </Link>
+                     </Link> */}
+                     <a class="nav-link js-scroll" href="#about">About</a>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                      <Link to={"/work"} className="nav-link">
                         Work
                      </Link>
-                  </li>
+                  </li> */}
                   <li className="nav-item">
-                     <Link to={"/contact"} className="nav-link">
+                     {/* <Link to={"/contact"} className="nav-link js-scroll">
                         Contact
-                     </Link>
+                     </Link> */}
+                     <a class="nav-link js-scroll" href="#contact">Contact</a>
                   </li>
                </div>
             </nav>

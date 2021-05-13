@@ -4,7 +4,14 @@ import NavBar from './components/NavBar';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Styles = styled.div`
+   #content {
+      overflow-y: scroll;
+   }
+`
 
 
 function App() {
@@ -12,16 +19,18 @@ function App() {
 		<div className="App">
          {/* <div class="Frame" style={{borderColor: rgb(0, 153, 255) }}></div> */}
          <NavBar />
-         {/* <div className='routes'>
-            <Switch>
-               <Route path='/' component={LandingSection} />
-               <Route path='/' component={About} />
-               <Route path='/' component={Contact} />
-            </Switch>
-         </div> */}
-         <LandingSection />
-         <About />
-         <Contact />
+         <Styles>
+         <div id='content'>
+               {/* <Route path='/' component={LandingSection} />
+               <Route path={['/', '/about']} component={About} />
+               <Route path={['/', '/contact']} component={Contact} /> */}
+               <LandingSection />
+               <About />
+               <Contact />
+         </div>
+         </Styles>
+
+
          <Footer />
 		</div>
 	);

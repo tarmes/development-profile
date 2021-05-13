@@ -84,7 +84,7 @@ function Contact() {
    return (
       <Styles>
          <VFX.VFXProvider>
-         <div className='contact-container'>
+         <div className='contact-container' id='contact'>
 
             
             <VFX.VFXSpan shader="spring" className="pixelated">

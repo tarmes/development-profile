@@ -119,7 +119,7 @@ function About() {
    return (
      <Styles>
        {/* <VFX.VFXProvider> */}
-         <div className="about-container">
+         <div className="about-container" id='about'>
            {/* <VFX.VFXSpan shader="pixelateTransition" className="skills"> */}
            <h2 className='skills'>
                Skills
