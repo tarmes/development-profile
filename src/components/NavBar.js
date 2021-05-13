@@ -33,11 +33,15 @@ const Styles = styled.div`
    .post-transition {
       width: 35%;
       margin: 0 auto;
-      background-color: darkred;
-      color: black;
+      background-color: #380056;
       transition: all 1s ease;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
    }
 
+   .nav-link {
+      color: black;
+   }
 
 `
 
