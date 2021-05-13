@@ -5,9 +5,8 @@ import TypistText from "./TypistText";
 import * as VFX from "react-vfx";
 
 const Styles = styled.div`
-  height: 90vh;
   position: relative;
-  margin: 20vh 0 -5vh;
+  margin: 20vh 0 ;
 
   .avatar-pic {
     border-radius: 15%;
@@ -23,10 +22,20 @@ const Styles = styled.div`
     margin: 40px 0;
   }
 
-  .cat-pic {
-    position: absolute;
-    top: 3vh;
-    right: 15vh;
+  #cat-pic {
+   position: absolute;
+   top: 3vh;
+   right: 15vh;
+   z-index: 0;
+   width: 200px;     
+  }
+
+  #dog-pic {
+   position: absolute;
+   top: 10vh;
+   left: 15vh;
+   z-index: 0; 
+   width: 200px;    
   }
 `;
 
@@ -35,6 +44,14 @@ function LandingSection() {
     <Styles>
       <TsParticles />
       <div className="landing-section-container">
+      <VFX.VFXProvider>
+            <VFX.VFXImg
+              id="dog-pic"
+              src="doge.gif"
+              alt="dogeGif"
+              shader="rainbow"
+            />
+      </VFX.VFXProvider>
         <img
           src="https://avatars.githubusercontent.com/u/5865915?s=400&u=5fc166e95a00b64d9e232cfeeb0deb529aa6c3f4&v=4"
           className="avatar-pic"
@@ -43,14 +60,12 @@ function LandingSection() {
         <h1>hi, I'm Trevor Armes.</h1>
         <TypistText />
         <VFX.VFXProvider>
-          <div className="cat-pic">
             <VFX.VFXImg
               id="cat-pic"
               src="cat.gif"
               alt="catGif"
               shader="rainbow"
             />
-          </div>
         </VFX.VFXProvider>
       </div>
     </Styles>

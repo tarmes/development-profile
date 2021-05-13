@@ -9,6 +9,35 @@ const Styles = styled.div`
    top: 0;
    width: 100%;
 
+   .navbar-container {
+      z-index: 9999;
+   }
+
+   .navbar {
+      z-index: 9999;
+   }
+
+   .brand-display {
+      display: none;
+   }
+
+   .navbar-nav {
+      justify-content: center !important;
+   }
+
+   .pre-transition {
+      width: 100%;
+      transition: all 2s;
+   }
+
+   .post-transition {
+      width: 35%;
+      margin: 0 auto;
+      background-color: darkred;
+      color: black;
+      transition: all .75s;
+   }
+
 
 `
 
@@ -35,11 +64,11 @@ function NavBar() {
    return (
       <Styles>
          <div className='navbar-container'>
-            <nav  className={isScrolling ? 'navbar navbar-expand navbar-dark bg-dark' : 'navbar navbar-expand navbar-dark bg-transparent'}>
-               <a href="/" className="navbar-brand">
+            <nav  className={isScrolling ? 'navbar navbar-expand navbar-dark post-transition' : 'navbar navbar-expand navbar-dark bg-transparent pre-transition'}>
+               <a href="/" className={isScrolling ? "navbar-brand brand-display" : "navbar-brand"}>
                   Armes Development
                </a>
-               <div className="navbar-nav ml-auto">
+               <div className={isScrolling ? "navbar-nav mx-auto" : "navbar-nav ml-auto"}>
                   <li className="nav-item">
                      <Link to={"/"} className="nav-link">
                         Home

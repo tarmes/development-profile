@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import * as VFX from 'react-vfx';
 import { SkillBars } from 'react-skills';
 
 const Styles = styled.div`
@@ -119,11 +118,14 @@ const skillsData = [
 function About() {
    return (
      <Styles>
-       <VFX.VFXProvider>
+       {/* <VFX.VFXProvider> */}
          <div className="about-container">
-           <VFX.VFXSpan shader="pixelateTransition" className="skills">
-             Skills
-           </VFX.VFXSpan>
+           {/* <VFX.VFXSpan shader="pixelateTransition" className="skills"> */}
+           <h2 className='skills'>
+               Skills
+           </h2>
+             
+           {/* </VFX.VFXSpan> */}
            <div className="about-section">
                <div className="skills-container">
                   <SkillBars
@@ -139,7 +141,7 @@ function About() {
                </div>
             </div>
          </div>
-       </VFX.VFXProvider>
+       {/* </VFX.VFXProvider> */}
      </Styles>
    );
 }

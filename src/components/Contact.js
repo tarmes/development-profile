@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import * as emailjs from 'emailjs-com';
 import { SocialIcon } from 'react-social-icons';
+import * as VFX from 'react-vfx';
 
 const Styles = styled.div`
    position: relative;
@@ -16,6 +17,14 @@ const Styles = styled.div`
       margin: auto;
    }
 
+   .pixelated {
+      font-size: 2.6em;
+   }
+
+   .form-control {
+      margin: 5% 0;
+   }
+
    .contact-info-container {
       width: 40%;
       margin: auto;
@@ -28,6 +37,7 @@ const Styles = styled.div`
    .socials {
       margin: 0 2%;
    }
+
 `;
 
 const initialContactFormValues = {
@@ -73,11 +83,16 @@ function Contact() {
 
    return (
       <Styles>
+         <VFX.VFXProvider>
          <div className='contact-container'>
-            <h2>Contact</h2>
+
+            
+            <VFX.VFXSpan shader="spring" className="pixelated">
+               Contact
+            </VFX.VFXSpan>
             <form id="contact-form" onSubmit={handleSubmit}>
                <div className='form-group'>
-                  <label htmlFor='name'>Name</label>
+                  {/* <label htmlFor='name'>Name</label> */}
                   <input 
                      type='text'
                      className='form-control'
@@ -86,11 +101,11 @@ function Contact() {
                      value={contactFormValues.name}
                      onChange={handleChange}
                      name="name"
+                     placeholder="Your Name"
                   />
                </div>
 
                <div className='form-group'>
-                  <label htmlFor='company'>Company</label>
                   <input 
                      type='text'
                      className='form-control'
@@ -98,11 +113,11 @@ function Contact() {
                      value={contactFormValues.company}
                      onChange={handleChange}
                      name="company"
+                     placeholder="Company"
                   />
                </div>
 
                <div className='form-group'>
-                  <label htmlFor='email'>Email</label>
                   <input 
                      type='email'
                      className='form-control'
@@ -111,11 +126,11 @@ function Contact() {
                      value={contactFormValues.email}
                      onChange={handleChange}
                      name="email"
+                     placeholder="Email"
                   />
                </div>
 
                <div className='form-group'>
-                  <label htmlFor='subject'>Subject</label>
                   <input 
                      type='text'
                      className='form-control'
@@ -124,11 +139,11 @@ function Contact() {
                      value={contactFormValues.subject}
                      onChange={handleChange}
                      name="subject"
+                     placeholder="Subject"
                   />
                </div>
 
                <div className='form-group'>
-                  <label htmlFor='text'>Text</label>
                   <input 
                      type='text'
                      className='form-control'
@@ -136,6 +151,7 @@ function Contact() {
                      value={contactFormValues.text}
                      onChange={handleChange}
                      name="text"
+                     placeholder="Write something here..."
                   />
                </div>
 
@@ -147,13 +163,16 @@ function Contact() {
 
          </div>
          <div className='contact-info-container'>
-            <h2>General Info</h2>
+            <VFX.VFXSpan shader="warpTransition" className="pixelated">
+               General Info
+            </VFX.VFXSpan>
             <p>If you'd like to see some more of the developer, or more of the person, here you go!</p>
             <div className="contact-buttons">
                      <SocialIcon className='socials' url="https://www.linkedin.com/in/trevor-armes/" />
                      <SocialIcon className='socials' url="https://github.com/tarmes" />
             </div>
          </div>
+         </VFX.VFXProvider>
       </Styles>
       
    )
