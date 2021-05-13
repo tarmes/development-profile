@@ -27,6 +27,11 @@ const Styles = styled.div`
       margin: 5% 0;
    }
 
+   button {
+      background-color: #380056;
+      border: 1px solid #380056;
+   }
+
    .contact-info-container {
       width: 40%;
       margin: auto;
@@ -41,8 +46,8 @@ const Styles = styled.div`
    }
 
    .errors {
-      color: red;
-      margin-top: 3%
+      color: #f74545;
+      margin-top: 3%;
    }
 
 `;
@@ -185,7 +190,7 @@ function Contact() {
                      value={contactFormValues.text}
                      onChange={handleChange}
                      name="text"
-                     placeholder="Write something here..."
+                     placeholder="Send Trevor a message!"
                   />
                </div>
 
