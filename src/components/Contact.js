@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import * as emailjs from 'emailjs-com';
 import { SocialIcon } from 'react-social-icons';
 import * as VFX from 'react-vfx';
+import schema from '../validation/formSchema';
+import * as yup from 'yup';
 
 const Styles = styled.div`
    position: relative;
@@ -38,6 +40,11 @@ const Styles = styled.div`
       margin: 0 2%;
    }
 
+   .errors {
+      color: red;
+      margin-top: 3%
+   }
+
 `;
 
 const initialContactFormValues = {
@@ -48,12 +55,20 @@ const initialContactFormValues = {
    text: ""
 };
 
+const initialContactFormErrors = {
+   name: "",
+   email: "",
+   subject: ""
+}
+
 function Contact() {
 
    const [contactFormValues, setContactFormValues] = useState(initialContactFormValues);
+   const [contactFormErrors, setContactFormErrors] = useState(initialContactFormErrors);
    
    const handleChange = e => {
       const { name, value } = e.target;
+      validateContactForm(name, value)
       setContactFormValues({ ...contactFormValues, [name]: value });
    }
 
@@ -78,6 +93,24 @@ function Contact() {
 
       console.log("attempted send", templateParams);
       setContactFormValues(initialContactFormValues);
+   }
+
+   const validateContactForm = (name, value) => {
+      yup
+         .reach(schema, name)
+         .validate(value)
+         .then(valid => {
+            setContactFormErrors({
+               ...contactFormErrors,
+               [name]: ""
+            })
+         })
+         .catch(err => {
+            setContactFormErrors({
+               ...contactFormErrors,
+               [name]: err.errors[0]
+            })
+         })
    }
 
 
@@ -143,6 +176,7 @@ function Contact() {
                   />
                </div>
 
+
                <div className='form-group'>
                   <input 
                      type='text'
@@ -158,6 +192,12 @@ function Contact() {
                <button type="submit" className="btn btn-primary">
                   Submit
                </button>
+
+               <div className='errors'>
+                  <div>{contactFormErrors.name}</div>
+                  <div>{contactFormErrors.email}</div>
+                  <div>{contactFormErrors.subject}</div>
+               </div>
             </form>
             
 

@@ -25,7 +25,7 @@ const Styles = styled.div`
   #cat-pic {
    position: absolute;
    top: 3vh;
-   right: 15vh;
+   right: 10%;
    z-index: 0;
    width: 200px;     
   }
@@ -33,7 +33,7 @@ const Styles = styled.div`
   #dog-pic {
    position: absolute;
    top: 10vh;
-   left: 15vh;
+   left: 10%;
    z-index: 0; 
    width: 200px;    
   }

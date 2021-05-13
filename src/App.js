@@ -4,7 +4,6 @@ import NavBar from './components/NavBar';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Styles = styled.div`
