@@ -37,6 +37,56 @@ const Styles = styled.div`
    z-index: 0; 
    width: 200px;    
   }
+
+  @media (max-width: 1200px) {
+     #dog-pic {
+        left: 5%;
+     }
+
+     #cat-pic {
+        right: 5%;
+     }
+  }
+
+  @media (max-width: 1024px) {
+     #cat-pic {
+        width: 150px;
+     }
+
+     #dog-pic {
+        width: 150px;
+     }
+  }
+
+  @media (max-width: 768px) {
+     #cat-pic {
+        width: 90px;
+        top: 0;
+        right: 8%;
+     }
+
+     #dog-pic {
+        width: 100px;
+        top: 4vh;
+        left: 8%;
+     }
+  }
+
+  @media (max-width: 480px) {
+      .avatar-pic {
+         width: 25%;
+      }
+
+      #cat-pic {
+         width: 80px;
+         top: -1vh;
+      }
+
+      #dog-pic {
+         width: 80px;
+         top: 3vh;
+      }
+  }
 `;
 
 function LandingSection() {

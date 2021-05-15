@@ -15,12 +15,14 @@ const Styles = styled.div`
    padding: 5%;
 
    .contact-container {
-      width: 40%;
-      margin: auto;
+      display: flex;
+      align-content: space-between;
+      width: 100%;
    }
 
    .pixelated {
       font-size: 2.6em;
+      color: #380056;
    }
 
    .form-control {
@@ -32,9 +34,14 @@ const Styles = styled.div`
       border: 1px solid #380056;
    }
 
-   .contact-info-container {
-      width: 40%;
+   .contact-form-container {
+      width: 45%;
       margin: auto;
+   }
+
+   .contact-info-container {
+      width: 45%;
+      margin: 0 auto;
    }
 
    .contact-buttons {
@@ -50,6 +57,23 @@ const Styles = styled.div`
       margin-top: 3%;
    }
 
+   @media (max-width: 480px) {
+
+      .contact-container {
+         flex-direction: column;
+      }
+      
+      .contact-info-container {
+         width: 85%;
+         margin: 2vh auto;
+      }
+
+      .contact-form-container {
+         width: 85%;
+      }
+   }
+
+   
 `;
 
 const initialContactFormValues = {
@@ -124,89 +148,91 @@ function Contact() {
          <VFX.VFXProvider>
          <div className='contact-container' id='contact'>
 
+            <div className='contact-form-container'>
+               <VFX.VFXSpan shader="spring" className="pixelated">
+                  Contact
+               </VFX.VFXSpan>
+               <form id="contact-form" onSubmit={handleSubmit}>
+                  <div className='form-group'>
+                     {/* <label htmlFor='name'>Name</label> */}
+                     <input 
+                        type='text'
+                        className='form-control'
+                        id='name'
+                        required
+                        value={contactFormValues.name}
+                        onChange={handleChange}
+                        name="name"
+                        placeholder="Your Name"
+                     />
+                  </div>
+
+                  <div className='form-group'>
+                     <input 
+                        type='text'
+                        className='form-control'
+                        id='company'
+                        value={contactFormValues.company}
+                        onChange={handleChange}
+                        name="company"
+                        placeholder="Company"
+                     />
+                  </div>
+
+                  <div className='form-group'>
+                     <input 
+                        type='email'
+                        className='form-control'
+                        id='email'
+                        required
+                        value={contactFormValues.email}
+                        onChange={handleChange}
+                        name="email"
+                        placeholder="Email"
+                     />
+                  </div>
+
+                  <div className='form-group'>
+                     <input 
+                        type='text'
+                        className='form-control'
+                        id='subject'
+                        required
+                        value={contactFormValues.subject}
+                        onChange={handleChange}
+                        name="subject"
+                        placeholder="Subject"
+                     />
+                  </div>
+
+
+                  <div className='form-group'>
+                     <input 
+                        type='text'
+                        className='form-control'
+                        id='text'
+                        value={contactFormValues.text}
+                        onChange={handleChange}
+                        name="text"
+                        placeholder="Send Trevor a message!"
+                     />
+                  </div>
+
+                  <button type="submit" className="btn btn-primary">
+                     Submit
+                  </button>
+
+                  <div className='errors'>
+                     <div>{contactFormErrors.name}</div>
+                     <div>{contactFormErrors.email}</div>
+                     <div>{contactFormErrors.subject}</div>
+                  </div>
+               </form>
+            </div>
             
-            <VFX.VFXSpan shader="spring" className="pixelated">
-               Contact
-            </VFX.VFXSpan>
-            <form id="contact-form" onSubmit={handleSubmit}>
-               <div className='form-group'>
-                  {/* <label htmlFor='name'>Name</label> */}
-                  <input 
-                     type='text'
-                     className='form-control'
-                     id='name'
-                     required
-                     value={contactFormValues.name}
-                     onChange={handleChange}
-                     name="name"
-                     placeholder="Your Name"
-                  />
-               </div>
-
-               <div className='form-group'>
-                  <input 
-                     type='text'
-                     className='form-control'
-                     id='company'
-                     value={contactFormValues.company}
-                     onChange={handleChange}
-                     name="company"
-                     placeholder="Company"
-                  />
-               </div>
-
-               <div className='form-group'>
-                  <input 
-                     type='email'
-                     className='form-control'
-                     id='email'
-                     required
-                     value={contactFormValues.email}
-                     onChange={handleChange}
-                     name="email"
-                     placeholder="Email"
-                  />
-               </div>
-
-               <div className='form-group'>
-                  <input 
-                     type='text'
-                     className='form-control'
-                     id='subject'
-                     required
-                     value={contactFormValues.subject}
-                     onChange={handleChange}
-                     name="subject"
-                     placeholder="Subject"
-                  />
-               </div>
-
-
-               <div className='form-group'>
-                  <input 
-                     type='text'
-                     className='form-control'
-                     id='text'
-                     value={contactFormValues.text}
-                     onChange={handleChange}
-                     name="text"
-                     placeholder="Send Trevor a message!"
-                  />
-               </div>
-
-               <button type="submit" className="btn btn-primary">
-                  Submit
-               </button>
-
-               <div className='errors'>
-                  <div>{contactFormErrors.name}</div>
-                  <div>{contactFormErrors.email}</div>
-                  <div>{contactFormErrors.subject}</div>
-               </div>
-            </form>
             
 
-         </div>
+         
          <div className='contact-info-container'>
             <VFX.VFXSpan shader="warpTransition" className="pixelated">
                General Info
@@ -216,6 +242,7 @@ function Contact() {
                      <SocialIcon className='socials' url="https://www.linkedin.com/in/trevor-armes/" />
                      <SocialIcon className='socials' url="https://github.com/tarmes" />
             </div>
+         </div>
          </div>
          </VFX.VFXProvider>
       </Styles>
