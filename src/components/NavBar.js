@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import NavBarMobile from './NavBarMobile';
 
 const Styles = styled.div`
    position: fixed;
@@ -10,10 +11,6 @@ const Styles = styled.div`
    width: 100%;
 
    .navbar-container {
-      z-index: 9999;
-   }
-
-   .navbar {
       z-index: 9999;
    }
 
@@ -41,6 +38,16 @@ const Styles = styled.div`
 
    .nav-link {
       color: black;
+   }
+
+   @media (max-width: 768px) {
+      .pre-transition {
+         display: none;
+      }
+
+      .post-transition {
+         display: none;
+      }
    }
 
 `
@@ -74,30 +81,17 @@ function NavBar() {
                </a>
                <div className={isScrolling ? "navbar-nav mx-auto" : "navbar-nav ml-auto"}>
                   <li className="nav-item">
-                     {/* <Link to={"/"} className="nav-link js-scroll">
-                        Home
-                     </Link> */}
                      <a class="nav-link js-scroll" href="#top">Home</a>
                   </li>
                   <li className="nav-item">
-                     {/* <Link to={"/about"} className="nav-link js-scroll">
-                        About
-                     </Link> */}
                      <a class="nav-link js-scroll" href="#about">About</a>
                   </li>
-                  {/* <li className="nav-item">
-                     <Link to={"/work"} className="nav-link">
-                        Work
-                     </Link>
-                  </li> */}
                   <li className="nav-item">
-                     {/* <Link to={"/contact"} className="nav-link js-scroll">
-                        Contact
-                     </Link> */}
                      <a class="nav-link js-scroll" href="#contact">Contact</a>
                   </li>
                </div>
             </nav>
+            <NavBarMobile />
          </div>
       </Styles>
       
