@@ -70,6 +70,10 @@ const Styles = styled.div`
         top: 4vh;
         left: 8%;
      }
+
+     .vfx {
+        display: none;
+     }
   }
 
   @media (max-width: 480px) {
@@ -100,6 +104,7 @@ function LandingSection() {
               src="doge.gif"
               alt="dogeGif"
               shader="rainbow"
+              className='vfx'
             />
       </VFX.VFXProvider>
         <img
@@ -115,6 +120,7 @@ function LandingSection() {
               src="cat.gif"
               alt="catGif"
               shader="rainbow"
+              className='vfx'
             />
         </VFX.VFXProvider>
       </div>

@@ -57,6 +57,28 @@ const Styles = styled.div`
       margin-top: 3%;
    }
 
+   .non-vfx {
+      display: none;
+   }
+
+   @media (max-width: 768px) {
+      .vfx {
+         display: none;
+      }
+
+      .non-vfx {
+         display: inline;
+      }
+
+      p {
+         margin: 8% 0;
+      }
+
+      .contact-info-container {
+         padding: 6%;
+      }
+   } 
+
    @media (max-width: 480px) {
 
       .contact-container {
@@ -149,9 +171,10 @@ function Contact() {
          <div className='contact-container' id='contact'>
 
             <div className='contact-form-container'>
-               <VFX.VFXSpan shader="spring" className="pixelated">
+               <VFX.VFXSpan shader="spring" className="pixelated vfx">
                   Contact
                </VFX.VFXSpan>
+               <h2 className='non-vfx'>Contact</h2>
                <form id="contact-form" onSubmit={handleSubmit}>
                   <div className='form-group'>
                      {/* <label htmlFor='name'>Name</label> */}
@@ -234,9 +257,10 @@ function Contact() {
 
          
          <div className='contact-info-container'>
-            <VFX.VFXSpan shader="warpTransition" className="pixelated">
-               General Info
+            <VFX.VFXSpan shader="warpTransition" className="pixelated vfx">
+               Explore
             </VFX.VFXSpan>
+            <h2 className='non-vfx'>Explore</h2>
             <p>If you'd like to see some more of the developer, or more of the person, here you go!</p>
             <div className="contact-buttons">
                      <SocialIcon className='socials' url="https://www.linkedin.com/in/trevor-armes/" />
