@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { 
+   Nav, 
+   Navbar,
+   NavbarBrand, 
+   NavbarToggler, 
+   Collapse, 
+   NavItem } from 'reactstrap';
 
 const Styles = styled.div`
    @media (min-width: 769px) {
       display: none
    }
+
+   .nav-link {
+      text-align: center;
+   }
 `
 
 function NavBarMobile() {
+
+   const [isOpen, setIsOpen] = useState(false);
+
+   const toggle = () => setIsOpen(!isOpen);
+
    return (
       <Styles>
          <div className='mobile-navbar-container'>
-            <nav className='navbar navbar-light bg-light'>
+            {/* <nav className='navbar navbar-light bg-light'>
                <a href="/" className="navbar-brand">
                   Armes Development
                </a>
@@ -30,9 +46,25 @@ function NavBarMobile() {
                         <a class="nav-link js-scroll" href="#contact">Contact</a>
                      </li>
                   </ul>
-               </div>
-               
-            </nav>
+               </div>               
+            </nav> */}
+            <Navbar color='light' light expand='md'>
+               <NavbarBrand href='/'>Armes Development</NavbarBrand>
+               <NavbarToggler onClick={toggle} />
+               <Collapse isOpen={isOpen} navbar>
+               <Nav className="mr-auto" navbar>
+                  <NavItem>
+                     <a class="nav-link" href="#top">Home</a>
+                  </NavItem>
+                  <NavItem>
+                     <a class="nav-link" href="#about">About</a>
+                  </NavItem>
+                  <NavItem>
+                     <a class="nav-link" href="#contact">Contact</a>
+                  </NavItem>
+               </Nav>
+               </Collapse>
+            </Navbar>
          </div>
       </Styles>
       
